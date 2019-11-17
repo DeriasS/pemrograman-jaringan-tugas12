@@ -31,7 +31,7 @@ public class Client {
     public String sendMessage(String msg){
         String resp = null;
         try {
-            out.println();
+            out.println(msg);
             resp = in.readLine();
         } catch (IOException ex) {
             Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
