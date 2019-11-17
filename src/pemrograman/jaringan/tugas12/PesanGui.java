@@ -6,18 +6,19 @@
 package pemrograman.jaringan.tugas12;
 
 import javax.swing.JButton;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
  *
  * @author deris
  */
-public class portGui extends javax.swing.JFrame {
+public class PesanGui extends javax.swing.JFrame {
 
     /**
-     * Creates new form portGui
+     * Creates new form PesanGui
      */
-    public portGui() {
+    public PesanGui() {
         initComponents();
     }
 
@@ -30,42 +31,54 @@ public class portGui extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        portOk = new javax.swing.JButton();
-        portText = new javax.swing.JTextField();
+        textField = new javax.swing.JTextField();
+        kirimButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        textArea = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        portOk.setText("OK");
+        kirimButton.setText("Kirim");
 
-        jLabel1.setText("Masukkan Port Server :");
+        textArea.setColumns(20);
+        textArea.setRows(5);
+        jScrollPane1.setViewportView(textArea);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("Chat Client");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(76, 76, 76)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(portText, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                        .addComponent(portOk, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30))))
+                        .addComponent(textField, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(kirimButton)
+                        .addGap(0, 26, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(131, 131, 131)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
+                .addGap(15, 15, 15)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(portOk)
-                    .addComponent(portText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55))
+                    .addComponent(textField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kirimButton))
+                .addGap(22, 22, 22))
         );
 
         pack();
@@ -88,37 +101,43 @@ public class portGui extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(portGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PesanGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(portGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PesanGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(portGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PesanGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(portGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PesanGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new portGui().setVisible(true);
+                new PesanGui().setVisible(true);
             }
         });
     }
 
-    public JButton getPortOk() {
-        return portOk;
+    public JButton getKirimButton() {
+        return kirimButton;
     }
 
-    public JTextField getPortText() {
-        return portText;
+    public JTextArea getTextArea() {
+        return textArea;
+    }
+
+    public JTextField getTextField() {
+        return textField;
     }
     
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton portOk;
-    private javax.swing.JTextField portText;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton kirimButton;
+    private javax.swing.JTextArea textArea;
+    private javax.swing.JTextField textField;
     // End of variables declaration//GEN-END:variables
 }
